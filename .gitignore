@@ -1,0 +1,107 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Model files (too large for git)
+*.pt
+*.pth
+*.onnx
+*.engine
+*.trt
+*.weights
+*.h5
+*.pb
+*.tflite
+*.zip
+best.pt
+best_coco.pt
+yolov*.pt
+yolo*.pt
+
+# Data directories (datasets are too large)
+data/dataset_voc/
+data/coco/
+data/images/
+data/labels/
+data/train/
+data/val/
+data/test/
+*.cache
+*.jpg
+*.png
+*.jpeg
+*.bmp
+*.tiff
+*.gif
+
+# Training outputs
+runs/
+wandb/
+logs/
+*.log
+*.txt
+pruning_log*.txt
+enhanced_activation_pruning_log.txt
+log.txt
+
+# Experiment results
+experiment_results/
+pruned_models/
+model/
+pruning/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+pseudo.rm
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Project specific
+*.zip
+best.pt.zip
+
+# YOLOv7 (not part of this project)
+yolov7/
+inspect_yolov7.py
+
