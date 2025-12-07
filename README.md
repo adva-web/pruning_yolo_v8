@@ -10,7 +10,7 @@ The experiments compare 4 pruning methods:
 3. **Activation with Max Gamma** - BatchNorm gamma-based channel selection combined with activations
 4. **Pure Gamma Pruning** - BatchNorm gamma magnitude-based pruning only
 
-All methods prune Conv 0 from blocks 1, 3, 5, 7 (4 layers total) and include fine-tuning for 20 epochs.
+All methods prune Conv 0 from blocks 1, 3, 5, 7 (4 layers total) and include fine-tuning for 20 epochs at the end, and 5 epochs between each pruning layer
 
 ## 🎯 Features
 
