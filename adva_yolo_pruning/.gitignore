@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data files (too large for git)
+data/dataset_voc/
+data/best.pt
+*.pt.zip
+
+# Training outputs
+runs/
+
+# Logs
+*.log
+*.txt
+enhanced_activation_pruning_log.txt
+pruning_*.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+

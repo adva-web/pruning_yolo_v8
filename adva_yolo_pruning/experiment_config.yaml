@@ -1,0 +1,216 @@
+# YOLOv8 Pruning Experiment Configuration
+# This file defines the parameters for running pruning experiments
+
+# Global settings
+global:
+  model_path: "data/best.pt"
+  data_yaml: "data/VOC_adva.yaml"
+  output_dir: "experiment_results"
+  evaluate_before: true
+  evaluate_after: true
+  save_model: true
+
+# Experiment definitions
+experiments:
+  # Gamma pruning experiments - Extended layer range
+  gamma_experiments:
+    - name: "gamma_2_layers"
+      method: "gamma"
+      layers_to_prune: 2
+      target_blocks: [3, 4, 5]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_3_layers"
+      method: "gamma"
+      layers_to_prune: 3
+      target_blocks: [3, 4, 5]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_4_layers"
+      method: "gamma"
+      layers_to_prune: 4
+      target_blocks: [3, 4, 5]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_6_layers"
+      method: "gamma"
+      layers_to_prune: 6
+      target_blocks: [2, 3, 4]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_8_layers"
+      method: "gamma"
+      layers_to_prune: 8
+      target_blocks: [2, 3, 4, 5]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_10_layers"
+      method: "gamma"
+      layers_to_prune: 10
+      target_blocks: [1, 2, 3, 4, 5]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_12_layers"
+      method: "gamma"
+      layers_to_prune: 12
+      target_blocks: [1, 2, 3, 4, 5]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_blocks_3_4"
+      method: "gamma"
+      layers_to_prune: 3
+      target_blocks: [3, 4]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_blocks_4_5"
+      method: "gamma"
+      layers_to_prune: 3
+      target_blocks: [4, 5]
+      pruning_percentage: 50.0
+      
+    # Additional block combinations for comprehensive testing (starting from block 1)
+    - name: "gamma_3_layers_blocks_1_2_3"
+      method: "gamma"
+      layers_to_prune: 3
+      target_blocks: [1, 2, 3]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_3_layers_blocks_2_3_4"
+      method: "gamma"
+      layers_to_prune: 3
+      target_blocks: [2, 3, 4]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_3_layers_blocks_1_2_4"
+      method: "gamma"
+      layers_to_prune: 3
+      target_blocks: [1, 2, 4]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_3_layers_blocks_2_4_5"
+      method: "gamma"
+      layers_to_prune: 3
+      target_blocks: [2, 4, 5]
+      pruning_percentage: 50.0
+      
+    - name: "gamma_3_layers_blocks_1_3_5"
+      method: "gamma"
+      layers_to_prune: 3
+      target_blocks: [1, 3, 5]
+      pruning_percentage: 50.0
+
+  # Activation pruning experiments - Extended layer range
+  activation_experiments:
+    - name: "activation_2_layers"
+      method: "activation"
+      layers_to_prune: 2
+      target_blocks: [3, 4, 5]
+      
+    - name: "activation_3_layers"
+      method: "activation"
+      layers_to_prune: 3
+      target_blocks: [3, 4, 5]
+      
+    - name: "activation_4_layers"
+      method: "activation"
+      layers_to_prune: 4
+      target_blocks: [3, 4, 5]
+      
+    - name: "activation_6_layers"
+      method: "activation"
+      layers_to_prune: 6
+      target_blocks: [2, 3, 4]
+      
+    - name: "activation_8_layers"
+      method: "activation"
+      layers_to_prune: 8
+      target_blocks: [2, 3, 4, 5]
+      
+    - name: "activation_10_layers"
+      method: "activation"
+      layers_to_prune: 10
+      target_blocks: [1, 2, 3, 4, 5]
+      
+    - name: "activation_12_layers"
+      method: "activation"
+      layers_to_prune: 12
+      target_blocks: [1, 2, 3, 4, 5]
+      
+    # Additional activation pruning block combinations (starting from block 1)
+    - name: "activation_3_layers_blocks_1_2_3"
+      method: "activation"
+      layers_to_prune: 3
+      target_blocks: [1, 2, 3]
+      
+    - name: "activation_3_layers_blocks_2_3_4"
+      method: "activation"
+      layers_to_prune: 3
+      target_blocks: [2, 3, 4]
+      
+    - name: "activation_3_layers_blocks_1_2_4"
+      method: "activation"
+      layers_to_prune: 3
+      target_blocks: [1, 2, 4]
+
+  # Comparison experiments (same layers, different methods) - Extended range
+  comparison_experiments:
+    - name: "compare_3_layers_gamma"
+      method: "gamma"
+      layers_to_prune: 3
+      target_blocks: [3, 4, 5]
+      pruning_percentage: 50.0
+      
+    - name: "compare_3_layers_activation"
+      method: "activation"
+      layers_to_prune: 3
+      target_blocks: [3, 4, 5]
+      
+    - name: "compare_6_layers_gamma"
+      method: "gamma"
+      layers_to_prune: 6
+      target_blocks: [2, 3, 4]
+      pruning_percentage: 50.0
+      
+    - name: "compare_6_layers_activation"
+      method: "activation"
+      layers_to_prune: 6
+      target_blocks: [2, 3, 4]
+      
+    - name: "compare_8_layers_gamma"
+      method: "gamma"
+      layers_to_prune: 8
+      target_blocks: [2, 3, 4, 5]
+      pruning_percentage: 50.0
+      
+    - name: "compare_8_layers_activation"
+      method: "activation"
+      layers_to_prune: 8
+      target_blocks: [2, 3, 4, 5]
+      
+    - name: "compare_10_layers_gamma"
+      method: "gamma"
+      layers_to_prune: 10
+      target_blocks: [1, 2, 3, 4, 5]
+      pruning_percentage: 50.0
+      
+    - name: "compare_10_layers_activation"
+      method: "activation"
+      layers_to_prune: 10
+      target_blocks: [1, 2, 3, 4, 5]
+      
+    - name: "compare_12_layers_gamma"
+      method: "gamma"
+      layers_to_prune: 12
+      target_blocks: [1, 2, 3, 4, 5]
+      pruning_percentage: 50.0
+      
+    - name: "compare_12_layers_activation"
+      method: "activation"
+      layers_to_prune: 12
+      target_blocks: [1, 2, 3, 4, 5]
+
+# Experiment sets to run
+run_sets:
+  - "gamma_experiments"
+  - "activation_experiments"
+  - "comparison_experiments"  # Extended comparison experiments with 6, 8, 10, 12 layers
