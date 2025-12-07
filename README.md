@@ -118,7 +118,7 @@ python test_coco_yolo.py
   # The script will use yolov8s.pt if fine-tuned model not found
   ```
 
-- Option 2: Fine-tune on COCO first (recommended):
+- Option 2: Fine-tune on COCO first (not tested yet 07/12/25):
   ```bash
   cd adva_yolo_pruning
   python finetune_yolov8s_coco.py
